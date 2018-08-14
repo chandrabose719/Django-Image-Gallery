@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div id="gallery-part">
+	<div class="container">
+		<h2>Welcome To All Images</h2>
+		{% for gallery in all_images %}
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+				<div class="gallery-content">
+					<a href="{{ gallery.image.url }}">
+						<img src="{{ gallery.image.url }}" class="img-responsive" alt="{{ gallery.name }}">
+						<h2>{{ gallery.name }}</h2>
+						<h4>{{ gallery.category }}</h4>
+					</a>
+				</div>		
+			</div>	
+		{% endfor %}	
+	</div>	
+</div>
+{% endblock %}
